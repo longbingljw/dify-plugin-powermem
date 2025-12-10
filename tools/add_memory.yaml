@@ -1,0 +1,83 @@
+identity:
+  name: add_memory
+  author: oceanbase
+  label:
+    en_US: Add Memory
+    zh_Hans: 添加记忆
+description:
+  human:
+    en_US: Add a memory to PowerMem (sync).
+    zh_Hans: 同步添加一条记忆到 PowerMem。
+  llm: Add a memory to PowerMem. messages can be str/dict/list.
+parameters:
+  - name: messages
+    type: string
+    required: true
+    label:
+      en_US: Messages
+      zh_Hans: 消息
+    human_description:
+      en_US: Memory content; accepts string or JSON list/dict (role/content).
+      zh_Hans: 记忆内容；可为字符串或 JSON 列表/字典（含 role/content）。
+    llm_description: Memory content; string or JSON list/dict (role/content).
+    form: llm
+  - name: user_id
+    type: string
+    required: false
+    label:
+      en_US: User ID
+      zh_Hans: 用户ID
+    human_description:
+      en_US: Optional user identifier to scope the memory.
+      zh_Hans: 可选用户标识，用于限定记忆作用域。
+    llm_description: Optional user identifier.
+    form: llm
+  - name: agent_id
+    type: string
+    required: false
+    label:
+      en_US: Agent ID
+      zh_Hans: 代理ID
+    human_description:
+      en_US: Optional agent identifier to scope the memory.
+      zh_Hans: 可选代理标识，用于限定记忆作用域。
+    llm_description: Optional agent identifier.
+    form: llm
+  - name: run_id
+    type: string
+    required: false
+    label:
+      en_US: Run ID
+      zh_Hans: 运行ID
+    human_description:
+      en_US: Optional run identifier to scope the memory.
+      zh_Hans: 可选运行标识，用于限定记忆作用域。
+    llm_description: Optional run identifier.
+    form: llm
+  - name: metadata
+    type: string
+    required: false
+    label:
+      en_US: Metadata (JSON)
+      zh_Hans: 元数据（JSON）
+    human_description:
+      en_US: Optional metadata in JSON string.
+      zh_Hans: 可选元数据，JSON 字符串。
+    llm_description: Optional metadata JSON string.
+    form: llm
+  - name: infer
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: Intelligent mode (infer)
+      zh_Hans: 智能模式
+    human_description:
+      en_US: Enable powermem intelligent mode (default true).
+      zh_Hans: 是否启用 powermem 智能模式（默认开启）。
+    llm_description: Flag to enable intelligent mode (default true).
+    form: form
+extra:
+  python:
+    source: tools/add_memory.py
+

@@ -1,0 +1,49 @@
+identity:
+  name: delete_all_memories
+  author: oceanbase
+  label:
+    en_US: Delete All Memories
+    zh_Hans: 删除所有记忆
+description:
+  human:
+    en_US: Delete all memories by scope (sync).
+    zh_Hans: 按范围同步删除所有记忆。
+  llm: Delete all memories with optional user/agent/run scope.
+parameters:
+  - name: user_id
+    type: string
+    required: false
+    label:
+      en_US: User ID
+      zh_Hans: 用户ID
+    human_description:
+      en_US: Optional user identifier to scope deletion.
+      zh_Hans: 可选用户标识，用于限定删除范围。
+    llm_description: Optional user identifier.
+    form: llm
+  - name: agent_id
+    type: string
+    required: false
+    label:
+      en_US: Agent ID
+      zh_Hans: 代理ID
+    human_description:
+      en_US: Optional agent identifier to scope deletion.
+      zh_Hans: 可选代理标识，用于限定删除范围。
+    llm_description: Optional agent identifier.
+    form: llm
+  - name: run_id
+    type: string
+    required: false
+    label:
+      en_US: Run ID
+      zh_Hans: 运行ID
+    human_description:
+      en_US: Optional run identifier to scope deletion.
+      zh_Hans: 可选运行标识，用于限定删除范围。
+    llm_description: Optional run identifier.
+    form: llm
+extra:
+  python:
+    source: tools/delete_all_memories.py
+

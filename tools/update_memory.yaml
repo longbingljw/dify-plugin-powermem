@@ -1,0 +1,71 @@
+identity:
+  name: update_memory
+  author: oceanbase
+  label:
+    en_US: Update Memory
+    zh_Hans: 更新记忆
+description:
+  human:
+    en_US: Update memory content by ID (sync).
+    zh_Hans: 通过 ID 同步更新记忆内容。
+  llm: Update memory content by ID with optional metadata/user/agent.
+parameters:
+  - name: memory_id
+    type: string
+    required: true
+    label:
+      en_US: Memory ID
+      zh_Hans: 记忆ID
+    human_description:
+      en_US: ID of the memory to update.
+      zh_Hans: 要更新的记忆 ID。
+    llm_description: Target memory ID.
+    form: llm
+  - name: content
+    type: string
+    required: true
+    label:
+      en_US: Content
+      zh_Hans: 内容
+    human_description:
+      en_US: New memory content.
+      zh_Hans: 新的记忆内容。
+    llm_description: New memory content.
+    form: llm
+  - name: user_id
+    type: string
+    required: false
+    label:
+      en_US: User ID
+      zh_Hans: 用户ID
+    human_description:
+      en_US: Optional user identifier to scope update.
+      zh_Hans: 可选用户标识，用于限定更新范围。
+    llm_description: Optional user identifier.
+    form: llm
+  - name: agent_id
+    type: string
+    required: false
+    label:
+      en_US: Agent ID
+      zh_Hans: 代理ID
+    human_description:
+      en_US: Optional agent identifier to scope update.
+      zh_Hans: 可选代理标识，用于限定更新范围。
+    llm_description: Optional agent identifier.
+    form: llm
+  - name: metadata
+    type: string
+    required: false
+    label:
+      en_US: Metadata (JSON)
+      zh_Hans: 元数据（JSON）
+    human_description:
+      en_US: Optional metadata in JSON string.
+      zh_Hans: 可选元数据，JSON 字符串。
+    llm_description: Optional metadata JSON.
+    form: llm
+extra:
+  python:
+    source: tools/update_memory.py
+

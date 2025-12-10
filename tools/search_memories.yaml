@@ -1,0 +1,94 @@
+identity:
+  name: search_memories
+  author: oceanbase
+  label:
+    en_US: Search Memories
+    zh_Hans: 搜索记忆
+description:
+  human:
+    en_US: Search memories in PowerMem (sync).
+    zh_Hans: 同步搜索 PowerMem 中的记忆。
+  llm: Search memories by query with optional filters/user/agent/run.
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query
+      zh_Hans: 查询
+    human_description:
+      en_US: Search query text.
+      zh_Hans: 搜索查询文本。
+    llm_description: Search query text.
+    form: llm
+  - name: user_id
+    type: string
+    required: false
+    label:
+      en_US: User ID
+      zh_Hans: 用户ID
+    human_description:
+      en_US: Optional user identifier to scope search.
+      zh_Hans: 可选用户标识，用于限定搜索范围。
+    llm_description: Optional user identifier.
+    form: llm
+  - name: agent_id
+    type: string
+    required: false
+    label:
+      en_US: Agent ID
+      zh_Hans: 代理ID
+    human_description:
+      en_US: Optional agent identifier to scope search.
+      zh_Hans: 可选代理标识，用于限定搜索范围。
+    llm_description: Optional agent identifier.
+    form: llm
+  - name: run_id
+    type: string
+    required: false
+    label:
+      en_US: Run ID
+      zh_Hans: 运行ID
+    human_description:
+      en_US: Optional run identifier to scope search.
+      zh_Hans: 可选运行标识，用于限定搜索范围。
+    llm_description: Optional run identifier.
+    form: llm
+  - name: limit
+    type: number
+    required: false
+    default: 30
+    label:
+      en_US: Limit
+      zh_Hans: 数量
+    human_description:
+      en_US: Max number of results (default 30).
+      zh_Hans: 返回结果数量上限（默认 30）。
+    llm_description: Max number of results.
+    form: form
+  - name: threshold
+    type: number
+    required: false
+    label:
+      en_US: Threshold
+      zh_Hans: 阈值
+    human_description:
+      en_US: Optional score threshold to filter results.
+      zh_Hans: 可选相似度阈值。
+    llm_description: Optional score threshold.
+    form: form
+  - name: filters
+    type: string
+    required: false
+    label:
+      en_US: Filters (JSON)
+      zh_Hans: 过滤器（JSON）
+    human_description:
+      en_US: Optional filters as JSON string.
+      zh_Hans: 可选过滤条件，JSON 字符串。
+    llm_description: Optional filters JSON.
+    form: llm
+extra:
+  python:
+    source: tools/search_memories.py
+

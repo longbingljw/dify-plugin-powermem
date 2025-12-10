@@ -1,0 +1,126 @@
+identity:
+  author: "oceanbase"
+  name: "powermem"
+  label:
+    en_US: "powermem"
+    zh_Hans: "powermem"
+  description:
+    en_US: "A Dify plugin for PowerMem."
+    zh_Hans: "A Dify plugin for PowerMem."
+  icon: "ob.png"
+
+credentials_for_provider:
+  llm_provider:
+    type: select
+    required: true
+    label:
+      en_US: LLM Provider
+      zh_Hans: LLM 提供商
+    options:
+      - value: qwen
+        label:
+          en_US: qwen
+          zh_Hans: qwen
+      - value: openai
+        label:
+          en_US: openai
+          zh_Hans: openai
+    default: qwen
+  llm_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: LLM API Key
+      zh_Hans: LLM API Key
+  llm_model:
+    type: text-input
+    required: false
+    default: qwen-plus
+    label:
+      en_US: LLM Model
+      zh_Hans: LLM 模型
+  embedder_provider:
+    type: select
+    required: true
+    label:
+      en_US: Embedding Provider
+      zh_Hans: 向量提供商
+    options:
+      - value: qwen
+        label:
+          en_US: qwen
+          zh_Hans: qwen
+      - value: openai
+        label:
+          en_US: openai
+          zh_Hans: openai
+    default: qwen
+  embedder_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Embedding API Key
+      zh_Hans: 向量模型 API Key
+  embedder_model:
+    type: text-input
+    required: false
+    default: text-embedding-v4
+    label:
+      en_US: Embedding Model
+      zh_Hans: 向量模型
+  db_provider:
+    type: select
+    required: true
+    options:
+      - value: sqlite
+        label:
+          en_US: sqlite
+          zh_Hans: sqlite
+      - value: oceanbase
+        label:
+          en_US: oceanbase
+          zh_Hans: oceanbase
+    label:
+      en_US: DB Provider
+      zh_Hans: 数据库类型
+    default: sqlite
+  oceanbase_host:
+    type: text-input
+    required: false
+    label:
+      en_US: OceanBase Host
+      zh_Hans: OceanBase 主机名
+  oceanbase_port:
+    type: text-input
+    required: false
+    label:
+      en_US: OceanBase Port
+      zh_Hans: OceanBase 端口
+  oceanbase_user:
+    type: text-input
+    required: false
+    label:
+      en_US: OceanBase User
+      zh_Hans: OceanBase 用户
+  oceanbase_password:
+    type: secret-input
+    required: false
+    label:
+      en_US: OceanBase Password
+      zh_Hans: OceanBase 密码
+  oceanbase_database:
+    type: text-input
+    required: false
+    label:
+      en_US: OceanBase Database
+      zh_Hans: OceanBase 数据库
+
+tools:
+  - tools/add_memory.yaml
+  - tools/search_memories.yaml
+  - tools/update_memory.yaml
+  - tools/delete_all_memories.yaml
+  - tools/list_memories.yaml
+extra:
+  python:
+    source: provider/powermem-local.py
