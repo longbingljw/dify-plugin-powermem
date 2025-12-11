@@ -18,10 +18,7 @@
 
 ### 使い方
 1. 資格情報：llm_provider（デフォルト qwen）、llm_api_key、llm_model（デフォルト qwen-plus）；embedder_provider（デフォルト qwen）、embedder_api_key、embedder_model（デフォルト text-embedding-v4）；db_provider（デフォルト sqlite）。  
-2. oceanbase を選ぶ場合、host/port/user/password/database を入力。  
-3. LLM base_url：qwen は dashscope デフォルト、openai は https://api.openai.com/v1。  
-4. 設定は `utils/config_builder.py` で生成（sqlite / oceanbase のみサポート）。  
-5. ワークフローでツールを選択し、metadata/filters は有効な JSON 文字列で入力。  
+2. oceanbase を選ぶ場合、host/port/user/password/database を入力。
 
 ### 注意事項
 - infer=true はインテリジェントモード、infer=false はシンプルモード。  

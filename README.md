@@ -18,10 +18,7 @@
 
 ### Usage Instructions
 1. Credentials: llm_provider (default qwen), llm_api_key, llm_model (default qwen-plus); embedder_provider (default qwen), embedder_api_key, embedder_model (default text-embedding-v4); db_provider (default sqlite).  
-2. If using oceanbase, fill host/port/user/password/database.  
-3. LLM base_url: qwen uses dashscope default; openai uses https://api.openai.com/v1.  
-4. Config is built by `utils/config_builder.py` (sqlite / oceanbase only).  
-5. In workflow, choose the tool and provide parameters; metadata/filters must be valid JSON strings.  
+2. If using oceanbase, fill host/port/user/password/database.
 
 ### Notes
 - infer=true uses intelligent mode; infer=false uses simple mode.  
